@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesSection.style.display = 'none';
             guidesSection.style.display = 'block';
             guidesTitle.textContent = `Suchergebnisse für "${e.target.value}"`;
-            backBtn.textContent = '← Suche zurücksetzen';
+            backBtn.style.display = 'none';
             renderGuides();
         } else {
             resetToCategories();
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchQuery = '';
         categoriesSection.style.display = 'block';
         guidesSection.style.display = 'none';
+        backBtn.style.display = 'block';
     }
 
     function showGuidesForCategory(category) {
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         guidesTitle.textContent = categoryNames[category] || category;
         backBtn.textContent = '← Zurück zu Kategorien';
+        backBtn.style.display = 'block';
         categoriesSection.style.display = 'none';
         guidesSection.style.display = 'block';
         renderGuides();
@@ -120,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 categoriesSection.style.display = 'none';
                 guidesSection.style.display = 'block';
                 guidesTitle.textContent = `Suchergebnisse für "${tagBtn.dataset.tag}"`;
-                backBtn.textContent = '← Suche zurücksetzen';
+                backBtn.style.display = 'none';
                 renderGuides();
                 searchInput.focus();
             });

@@ -238,7 +238,7 @@ body {
     background: var(--white);
     border: 2px solid var(--gray-200);
     border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 1rem;
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
@@ -255,9 +255,9 @@ body {
 }
 
 .category-card-icon {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     transition: var(--transition);
 }
 
@@ -1075,6 +1075,21 @@ body {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
+}
+
+.footer-web-link {
+    background: var(--gray-100);
+    color: var(--primary);
+    border-color: var(--gray-200);
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-web-link:hover {
+    background: var(--primary-subtle);
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .web-link:hover {
