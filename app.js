@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesSection = document.getElementById('categoriesSection');
     const categoryCards = document.querySelectorAll('.category-card');
     const guidesSection = document.getElementById('guidesSection');
+    const guidesHeader = document.querySelector('.guides-header');
     const guidesGrid = document.getElementById('guidesGrid');
     const guidesTitle = document.getElementById('guidesTitle');
     const backBtn = document.getElementById('backBtn');
@@ -34,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isSearchMode = true;
             categoriesSection.style.display = 'none';
             guidesSection.style.display = 'block';
-            guidesTitle.textContent = `Suchergebnisse für "${e.target.value}"`;
+            guidesTitle.style.display = 'none';
+            guidesHeader.style.marginBottom = '0.5rem';
             backBtn.style.display = 'none';
             renderGuides();
         } else {
@@ -92,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         searchQuery = '';
         categoriesSection.style.display = 'block';
         guidesSection.style.display = 'none';
+        guidesTitle.style.display = 'block';
+        guidesHeader.style.marginBottom = '1.5rem';
         backBtn.style.display = 'block';
     }
 
@@ -102,8 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'klassenbuch': '📝 Klassenbuch'
         };
         guidesTitle.textContent = categoryNames[category] || category;
+        guidesTitle.style.display = 'block';
         backBtn.textContent = '← Zurück zu Kategorien';
         backBtn.style.display = 'block';
+        guidesHeader.style.marginBottom = '1.5rem';
         categoriesSection.style.display = 'none';
         guidesSection.style.display = 'block';
         renderGuides();
@@ -121,7 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 isSearchMode = true;
                 categoriesSection.style.display = 'none';
                 guidesSection.style.display = 'block';
-                guidesTitle.textContent = `Suchergebnisse für "${tagBtn.dataset.tag}"`;
+                guidesTitle.style.display = 'none';
+                guidesHeader.style.marginBottom = '0.5rem';
                 backBtn.style.display = 'none';
                 renderGuides();
                 searchInput.focus();
