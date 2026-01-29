@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Lernplattform für das digitale Klassenbuch Units - Anleitungen und Hilfe für Lehrkräfte">
+    <title>Units Hilfe | Digitales Klassenbuch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <div class="logo-text">
+                    <div class="logo-title-row">
+                        <h1>Units Hilfe</h1>
+                        <a href="https://gym-horn-bremen.webuntis.com/" target="_blank" class="web-link">🌍 WebUntis</a>
+                    </div>
+                    <p>Digitales Klassenbuch leicht gemacht</p>
+                </div>
+            </div>
+            <div class="platform-toggle">
+                <!-- 'Alle' Button entfernt -->
+                <button class="toggle-btn active" data-platform="web">🖥️ Untis Web</button>
+                <button class="toggle-btn" data-platform="app">📱 Untis App</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput"
+                        placeholder="Suche nach Anleitungen, z.B. 'Abwesenheiten', 'Fehlzeiten', 'Noten'..."
+                        autocomplete="off">
+                    <button class="clear-btn" id="clearSearch">✕</button>
+                </div>
+                <div class="search-tags" id="popularTags" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section class="categories-section" id="categoriesSection">
+            <h2 class="categories-title">Kategorien durchsuchen</h2>
+            <div class="category-cards" id="categoryCards">
+                <div class="category-card" data-category="stundenplan">
+                    <span class="category-card-icon">📅</span>
+                    <h3>Stundenplan</h3>
+                    <p>Stundenpläne, Raumbelegung, Vertretungen</p>
+                </div>
+                <div class="category-card" data-category="unterricht">
+                    <span class="category-card-icon">📖</span>
+                    <h3>Unterricht</h3>
+                    <p>Prüfungskalender, Klassen, Schüler:innen</p>
+                </div>
+                <div class="category-card" data-category="klassenbuch">
+                    <span class="category-card-icon">📝</span>
+                    <h3>Klassenbuch</h3>
+                    <p>Abwesenheiten, Fehlzeiten, Einträge, Berichte</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guides-section" id="guidesSection" style="display: none;">
+            <div class="guides-header">
+                <button class="back-btn" id="backBtn">← Zurück zu Kategorien</button>
+                <h2 class="guides-title" id="guidesTitle">Anleitungen</h2>
+            </div>
+            <div class="guides-grid" id="guidesGrid"></div>
+            <div class="no-results" id="noResults">
+                <span class="no-results-icon">🔎</span>
+                <h3>Keine Ergebnisse gefunden</h3>
+                <p>Versuchen Sie es mit anderen Suchbegriffen oder wählen Sie eine Kategorie.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="guideModal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-header">
+                <span class="modal-platform" id="modalPlatform"></span>
+                <span class="modal-category" id="modalCategory"></span>
+            </div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Bei Fragen bitte an Kös oder Det wenden</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
